@@ -99,13 +99,16 @@ const PlanetsLocations = () => {
               </ul>
             </div>
           </main>
-          <h2 >Made with Passion <img src="src\assets\heart.png" alt="" style={{width:"25px"}}/> by GhostCode</h2>
-          <div className='footer'>
+          <footer>
+           <h2 >Made with Passion <img src="src\assets\heart.png" alt="" style={{width:"25px"}}/> by GhostCode</h2>
+           <div className='footer'>
             <h2>Elio Maure</h2>
             <h2>Matias Barengo</h2>
             <h2>Laura Padrón</h2>
             <h2>Oscar Ardila</h2>
-          </div>
+           </div>       
+          </footer>
+          
          
         </div>
       }
