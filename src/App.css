@@ -136,7 +136,7 @@ header {
   cursor: pointer;
 }
 
-h2 {
+.planet-info h2 {
   margin: 1rem 0;
   color: green;
   text-shadow:
@@ -211,19 +211,7 @@ p {
 
 .planet-info p {
   font-size: 20px;
-  text-shadow:
-    0 0 7px #fff,
-    0 0 10px #fff,
-    0 0 21px #fff,
-    0 0 42px #0fa,
-    0 0 82px #0fa,
-    0 0 92px #0fa,
-    0 0 102px #0fa,
-    0 0 151px #0fa;
-  animation-name: animation2;
-  animation-duration: 2s;
-  animation-iteration-count: infinite;
-  color: black;
+ 
 }
 
 
@@ -265,7 +253,10 @@ p {
   scale: 1.02;
   transition: .4s;
 }
-
+.character-card h2{
+ margin: 1rem 0;
+ color: white;
+}
 .character-card h3 {
   color: white;
 }
@@ -281,9 +272,72 @@ p {
   background-color: #ffffff
 }
 
+
+.btn-pagination{
+ cursor: pointer;
+ transform: scale(1);
+ transition: all 0.2s ease-in;
+ color: #ffffff;
+ height: 40px;
+ width: 40px;
+ font-size: 18px;
+ padding: 5px;
+ background-color: #062226;
+ border: 2px solid #3bae44;
+ gap: 1rem;
+ margin: 0 2px 0 2px;
+ border-radius: 100%;
+}
+
+.pagination-container button:hover {
+ transform: scale(1.1);
+ background-color: #3bae44;
+ color: black;
+ border: 3px solid #062226;
+}
+.prev-next{
+ cursor: pointer;
+ transform: scale(1);
+ transition: all 0.2s ease-in;
+ color: #ffffff;
+ height: 40px;
+ width: 150px;
+ font-size: 18px;
+ padding: 5px;
+ background-color: #062226;
+ border: 2px solid #3bae44;
+ gap: 1rem;
+ margin: 0 6px 0 6px;
+ 
+}
+footer{
+ padding-top: 20px;
+}
 .footer {
-  width: 100%;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
+ width: 100%;
+ display: flex;
+ justify-content: space-evenly;
+ align-items: center;
+ 
+}
+.goodbye{
+margin: 1rem 0;
+color: green;
+text-shadow:
+  0 0 7px #fff,
+  0 0 10px #fff,
+  0 0 21px #fff,
+  0 0 42px #0fa,
+  0 0 82px #0fa,
+  0 0 92px #0fa,
+  0 0 102px #0fa,
+  0 0 151px #0fa;
+animation-name: animation1;
+animation-duration: 2s;
+animation-iteration-count: infinite;
+
+}
+.footer h2{
+color: white;
+
 }

@@ -32,7 +32,18 @@ const PlanetsLocations = () => {
   const search = (e) => {
     axios.get(`${appi}/${e}`).then(res => setLocation(res.data)).then(() => setPlanetId(""))
   }
+  // PAGINACION
+  const [pagination,setPagination]=useState(1);
+  const residentsPerPage=6;
+  const lastIndex=pagination*residentsPerPage;
+  const firstIndex=lastIndex-residentsPerPage;
+  const residentsPaginated = location.residents?.slice(firstIndex,lastIndex);
+  const totalPages= Math.ceil(location.residents?.length/residentsPerPage);
 
+  const numbers=[];
+  for(let i=1;i<=totalPages;i++){
+   numbers.push(i);
+  }
   return (
     <>
       {loading ?
@@ -93,14 +104,25 @@ const PlanetsLocations = () => {
             </div>
             <div>
               <ul className='cards'>
-                {location.residents?.map(residents => (
+                {residentsPaginated.map(residents => (
                   <Residents url={residents} key={residents} />
                 ))}
               </ul>
             </div>
+            <div className='pagination-container'>
+             <button onClick={()=>setPagination(pagination-1)}
+             disabled={pagination===1} className='prev-next'
+             >Prev Page</button>
+             {numbers.map(number=>(
+              <button onClick={()=>setPagination(number)} className='btn-pagination'>{number}</button>
+             ))}
+             <button onClick={()=>setPagination(pagination+1)}
+             disabled={pagination===totalPages} className='prev-next'
+             >Next Page</button>
+            </div>
           </main>
           <footer>
-           <h2 >Made with Passion <i class="fa-solid fa-heart-circle-bolt"></i> by GhostCode</h2>
+           <h2 className='goodbye' >Made with Passion <i class="fa-solid fa-heart-circle-bolt"></i> by GhostCode</h2>
            <div className='footer'>
             <h2>Elio Maure</h2>
             <h2>Matias Barengo</h2>
